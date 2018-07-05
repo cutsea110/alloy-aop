@@ -15,9 +15,12 @@ sig B{
 pred function{
 	~f.f in iden and A in B.~f
 }
+pred partial{
+	~f.f in iden
+}
 ```
 
 ```alloy
 run function
-
+run partial
 ```
