@@ -13,14 +13,11 @@ sig B{
 
 ```alloy
 pred function{
-	~f.f in iden
+	~f.f in iden and A in B.~f
 }
 ```
 
 ```alloy
-pred show{
-	function
-}
+run function
 
-run show
 ```
