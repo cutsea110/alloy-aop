@@ -18,9 +18,12 @@ pred function{
 pred partial{
 	~f.f in iden
 }
+pred relation{
+}
 ```
 
 ```alloy
 run function
 run partial
+run relation
 ```
