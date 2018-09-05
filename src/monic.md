@@ -17,15 +17,18 @@ sig C{
 
 ```alloy
 pred monic{
-  f = g <=> f.m = g.m
+	f.m = g.m implies f = g
+--  f = g <=> f.m = g.m
 }
 ```
 
 ```alloy
 pred show{
-      f = g
-  and #A > 1
-  and monic
+	monic
+--	!monic
+--	and f = g
+	and f.m = g.m
+	and #A > 1
 }
 
 run show

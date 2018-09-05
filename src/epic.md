@@ -17,14 +17,17 @@ sig C{
 
 ```alloy
 pred epic{
-  f = g <=> e.f = e.g
+	e.f = e.g implies f = g
 }
 ```
 
 ```alloy
 pred show{
-      f = g
-  and epic
+	epic
+--	!epic
+--	and f = g
+	and e.f = e.g
+	and #C > 1
 }
 
 run show
