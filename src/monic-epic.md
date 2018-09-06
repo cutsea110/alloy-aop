@@ -33,11 +33,16 @@ pred me_iso{
 ```alloy
 pred function{
 	partial
-	and	B in A.~f
-	and	B in A.~g
-	and C in B.~me
-	and D in C.~h
-	and D in C.~k
+	and
+	D in h.C
+	and
+	D in k.C
+	and
+	C in me.B
+	and
+	B in f.A
+	and
+	B in g.A
 }
 pred partial{
 	~f.f in iden
@@ -57,6 +62,7 @@ pred relation{
 ```alloy
 pred show {
 	me_monic and me_epic and !me_iso
+	and relation
 	and h.me = k.me
 	and me.f = me.g
 	and #A > 1
