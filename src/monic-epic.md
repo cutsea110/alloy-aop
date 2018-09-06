@@ -31,29 +31,23 @@ pred me_iso{
 ```
 
 ```alloy
+fun dom(f: univ -> univ) : univ{
+	f.univ
+}
+fun cod(f: univ -> univ) : univ{
+	univ.f
+}
+pred iso(f: univ -> univ){
+	~f.f in iden
+}
+
 pred function{
 	partial
 	and
-	D in h.C
-	and
-	D in k.C
-	and
-	C in me.B
-	and
-	B in f.A
-	and
-	B in g.A
+	D in dom[h] and D in dom[k] and C in dom[me] and B in dom[f] and B in dom[g]
 }
 pred partial{
-	~f.f in iden
-	and
-	~g.g in iden
-	and
-	~me.me in iden
-	and
-	~h.h in iden
-	and
-	~k.k in iden
+	iso[f] and iso[g] and iso[me] and iso[h] and iso[k]
 }
 pred relation{
 }
