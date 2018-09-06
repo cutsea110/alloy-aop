@@ -60,6 +60,11 @@ pred relation{
 ```
 
 ```alloy
+assert function_iso{
+	function and me_monic and me_epic implies me_iso
+}
+check function_iso for 10
+
 pred show {
 	me_monic and me_epic and !me_iso
 	and relation
