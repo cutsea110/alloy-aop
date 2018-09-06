@@ -25,6 +25,9 @@ pred monic{
 pred epic{
 	me.f = me.g implies f = g
 }
+pred iso{
+	~me.me in iden
+}
 ```
 
 ```alloy
@@ -35,7 +38,7 @@ pred show {
 	and #A > 1
 	and #D > 1
 	and #B != #C
-	and me.~me not in iden
+	and !iso
 }
 run show
 ```
