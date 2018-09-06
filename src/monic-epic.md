@@ -19,26 +19,49 @@ sig D{
 ```
 
 ```alloy
-pred monic{
+pred me_monic{
 	h.me = k.me implies h = k
 }
-pred epic{
+pred me_epic{
 	me.f = me.g implies f = g
 }
-pred iso{
+pred me_iso{
 	~me.me in iden
 }
 ```
 
 ```alloy
+pred function{
+	partial
+	and	B in A.~f
+	and	B in A.~g
+	and C in B.~me
+	and D in C.~h
+	and D in C.~k
+}
+pred partial{
+	~f.f in iden
+	and
+	~g.g in iden
+	and
+	~me.me in iden
+	and
+	~h.h in iden
+	and
+	~k.k in iden
+}
+pred relation{
+}
+```
+
+```alloy
 pred show {
-	monic	and epic
+	me_monic and me_epic and !me_iso
 	and h.me = k.me
 	and me.f = me.g
 	and #A > 1
 	and #D > 1
 	and #B != #C
-	and !iso
 }
 run show
 ```
