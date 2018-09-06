@@ -1,5 +1,5 @@
 ---
-title: epic
+title: monic and epic not implies iso
 ---
 
 ```alloy
