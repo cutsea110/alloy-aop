@@ -65,6 +65,11 @@ assert function_iso{
 }
 check function_iso for 10
 
+assert partial_iso{
+	partial and me_monic and me_epic implies me_iso
+}
+check partial_iso for 10
+
 pred show {
 	me_monic and me_epic and !me_iso
 	and relation
