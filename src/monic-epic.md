@@ -64,9 +64,12 @@ assert partial_iso{
 }
 check partial_iso for 10
 
-pred show {
+pred theorem{
 	me_monic and me_epic and !me_iso
-	and relation
+}
+
+pred show {
+	theorem
 	and h.me = k.me
 	and me.f = me.g
 	and #A > 1
